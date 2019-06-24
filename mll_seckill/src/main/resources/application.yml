@@ -1,0 +1,35 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://www.mll.com:8761/eureka/
+
+spring:
+  application:
+    name: seckill
+  druid:
+    url: jdbc:mysql:///meilele?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    maxActive: 30
+    minIdle: 5
+    maxWait: 10000
+  freemarker:
+    template-loader-path: classpath:/templates/
+    cache: false
+    charset: UTF-8
+    check-template-location: true
+    content-type: text/html
+    expose-request-attributes: true
+    expose-session-attributes: true
+    allow-request-override: false
+    suffix: .ftl
+    allow-session-override: false
+
+
+server:
+  port: 9004
+
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mapper/*Mapper.xml

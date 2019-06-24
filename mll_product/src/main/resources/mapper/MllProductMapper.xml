@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cy.mll_product.mapper.MllProductMapper">
+    <select id="findById" resultType="MllProduct">
+        select * from mll_product where id = #{productId}
+    </select>
+
+    <update id="updateStockById">
+        UPDATE `mll_product` SET stock_count = stock_count-#{num} WHERE id = #{productId} AND stock_count>#{num};
+    </update>
+
+    <update id="RollBackStockById">
+        UPDATE `mll_product` SET stock_count = stock_count+#{num} WHERE id = #{productId} AND stock_count>#{num};
+    </update>
+</mapper>

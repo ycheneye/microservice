@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: es
+
+server:
+  port: 9005
